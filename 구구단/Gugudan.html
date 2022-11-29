@@ -22,7 +22,6 @@
                     second: Math.ceil(Math.random() * 9),
                     value: "",
                     result: "",
-                    answer: "정답은?",
                 };
 
                 onSubmit = (e) => {
@@ -32,17 +31,15 @@
                         this.state.first * this.state.second
                     ) {
                         this.setState({
-                            result: " 정답!",
+                            result: "정답 : " + this.state.value,
                             first: Math.ceil(Math.random() * 9),
                             second: Math.ceil(Math.random() * 9),
                             value: "",
-                            answer: this.state.first * this.state.second,
                         });
                     } else {
                         this.setState({
                             result: "땡",
                             value: "",
-                            answer: "",
                         });
                     }
                 };
@@ -62,10 +59,7 @@
                                 />
                                 <button>입력!</button>
                             </form>
-                            <div>
-                                {this.state.result}
-                                {this.state.answer}
-                            </div>
+                            <div>{this.state.result}</div>
                         </React.Fragment>
                     );
                 }
